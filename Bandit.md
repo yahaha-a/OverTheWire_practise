@@ -459,7 +459,103 @@ p7TaowMYrmu23Ol8hiZh9UvD0O9hpx8d
 <summary>Level 25 -> Level 26</summary>
 
 ```
+cat /etc/passwd|grep bandit26
 
+cat /usr/bin/showtext
+
+ls
+
+ssh -i bandit26.sshkey -p 2220 bandit26@localhost
+#调小终端
+
+:r /etc/bandit_pass/bandit26
+
+ssh bandit26@bandit.labs.overthewire.org -p 2220
+c7GvcKlw9mC7aUQaPx7nwFstuAIBw1o1
+```
+
+</details>
+
+<details open>
+<summary>Level 26 -> Level 27</summary>
+
+```
+:set shell sh=/bin/sh
+
+:sh
+
+$ ls
+
+$ ls -al
+
+$ ./bandit27-do
+
+$ ./bandit27-do cat /etc/bandit_pass/bandit27
+
+ssh bandit27@bandit.labs.overthewire.org -p 2220
+YnQpBuifNMas1hcUFk70ZmqkhUU2EuaS
+```
+
+</details>
+
+<details open>
+<summary>Level 27 -> Level 28</summary>
+
+```
+cd /tmp
+
+git clone ssh://bandit27-git@localhost:2220/home/bandit27-git/repo /tmp/repo_new
+
+cd repo_new
+
+ls
+
+cat README
+
+ssh bandit28@bandit.labs.overthewire.org -p 2220
+AVanL161y9rsbcJIsFHuw35rjaOM19nR
+```
+
+</details>
+
+<details open>
+<summary>Level 28 -> Level 29</summary>
+
+```
+git clone ssh://bandit28-git@localhost:2220/home/bandit28-git/repo /tmp/repo_28
+
+cd /tmp/repo_28
+
+ls
+
+cat README.md
+
+git show
+
+ssh bandit29@bandit.labs.overthewire.org -p 2220
+tQKvmcwNYcFS6vmPHIUSI3ShmsrQZK8S
+```
+
+</details>
+
+<details open>
+<summary>Level 29 -> Level 30</summary>
+
+```
+git clone ssh://bandit29-git@localhost:2220/home/bandit29-git/repo /tmp/repo_29
+
+ls
+
+cat README.md
+
+git branch -a
+
+git checkout dev
+
+cat README.md
+
+ssh bandit30@bandit.labs.overthewire.org -p 2220
+xbhV3HpNGlTIdnjUrdAlPzc2L6y9EOnS
 ```
 
 </details>
