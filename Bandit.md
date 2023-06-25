@@ -559,3 +559,78 @@ xbhV3HpNGlTIdnjUrdAlPzc2L6y9EOnS
 ```
 
 </details>
+
+<details open>
+<summary>Level 30 -> Level 31</summary>
+
+git show：此命令用于显示指定提交的详细信息。它显示特定提交的提交信息、作者、日期、修改的文件以及每个文件的具体变动内容。
+
+git log：此命令用于查看提交历史。它显示了所有的提交记录，包括每个提交的哈希值、作者、日期、提交信息等。
+
+git branch -a：此命令用于查看所有分支的列表。它列出本地分支和远程跟踪分支，以及当前所在的分支。
+
+git show-ref：此命令用于显示引用（分支、标签等）的列表及其对应的哈希值。它显示了所有的引用，包括本地分支、远程跟踪分支和标签。
+
+
+```
+git clone ssh://bandit30-git@localhost:2220/home/bandit30-git/repo /tmp/repo_30
+
+cd /tmp/repo_30
+
+ls
+
+cat README.md
+
+git show-ref
+
+git show 831a
+
+ssh bandit31@bandit.labs.overthewire.org -p 2220
+OoffzGDlzhAlerFJ2cAiz1D41JW1Mhmt
+```
+
+</details>
+
+<details open>
+<summary>Level 31 -> Level 32</summary>
+
+```
+git clone ssh://bandit31-git@localhost:2220/home/bandit31-git/repo /tmp/repo_31
+
+cd /tmp/repo_31
+
+ls
+
+cat README.md
+
+echo 'May I come in?' >> key.txt
+
+cat key.txt
+
+git add -f ./key.txt
+
+git status
+
+git commit -m 'key.txt'
+
+git push origin master
+
+ssh bandit32@bandit.labs.overthewire.org -p 2220
+rmCBvG56y58BXzv98yZGdO7ATVL5dW8y
+```
+
+</details>
+
+<details open>
+<summary>Level 32 -> Level 33</summary>
+
+```
+$0
+
+cat /etc/bandit_pass/bandit33
+
+ssh bandit33@bandit.labs.overthewire.org -p 2220
+odHo63fHiFqcWWJG9rLiLDtPm45KzUKy
+```
+
+</details>
