@@ -204,8 +204,155 @@ Base64是一种用于将二进制数据转换为文本格式的编码方式。�
 cat data.txt | base64 -d
 
 ssh bandit11@bandit.labs.overthewire.org -p 2220
+6zPeziLdR2RKNdNYFNb6nVCKzphlXHBM
 ```
 
-6zPeziLdR2RKNdNYFNb6nVCKzphlXHBM
+</details>
+
+<details open>
+<summary>Level 11 -> Level 12</summary>
+
+```
+cat data.txt | tr 'A-Za-z' 'N-ZA-Mn-za-m'
+ssh bandit12@bandit.labs.overthewire.org -p 2220
+JVNBBFSmZwKKOP0XbFXOoW8chDz5yVRv
+```
+
+</details>
+
+<details open>
+<summary>Level 12 -> Level 13</summary>
+
+xxd: 将十六进制转储文件转换为二进制文件
+
+```
+mkdir /tmp/mydir
+
+cp data.txt /tmp/mydir/myfile.hex
+
+cd /tmp/mydir
+
+xxd -r myfile.hex > binary_data
+
+file binary_data
+
+mv binary_data binary_data.gz
+
+gzip -d binary_data.gz
+
+tar xf data2.bin
+
+bunzip2 data6.bin
+
+ssh bandit13@bandit.labs.overthewire.org -p 2220
+wbWdlBxEir4CaE8LaPhauuOo6pwRmrDw
+```
+
+</details>
+
+<details open>
+<summary>Level 13 -> Level 14</summary>
+
+```
+ssh -i sshkey.private -p 2220 bandit14@localhost
+
+cat /etc/bandit_pass/bandit14
+
+ssh bandit14@bandit.labs.overthewire.org -p 2220
+fGrHPx402xGC7U7rXKDaxiWFTOiF0ENq
+```
+
+</details>
+
+<details open>
+<summary>Level 14 -> Level 15</summary>
+
+```
+echo "fGrHPx402xGC7U7rXKDaxiWFTOiF0ENq" | nc localhost 30000
+
+ssh bandit15@bandit.labs.overthewire.org -p 2220
+jN2kgmIXJ6fShzhT2avhotn4Zcka6tnt
+```
+
+</details>
+
+<details open>
+<summary>Level 15 -> Level 16</summary>
+
+```
+echo "jN2kgmIXJ6fShzhT2avhotn4Zcka6tnt" | openssl s_client -connect localhost:30001 -ign_eof
+
+ssh bandit16@bandit.labs.overthewire.org -p 2220
+JQttfApK4SeyHwDlI9SXGR50qclOAil1
+```
+
+</details>
+
+<details open>
+<summary>Level 16 -> Level 17</summary>
+
+```
+echo "JQttfApK4SeyHwDlI9SXGR50qclOAil1" | openssl s_client -connect localhost:31790 -ign_eof
+
+nano /tmp/bandit17.sshkey
+
+chmod 600 /tmp/bandit17.sshkey
+
+ssh -i /tmp/bandit17.sshkey -p 2220 bandit17@localhost
+
+cat /etc/bandit_pass/bandit17
+
+ssh bandit17@bandit.labs.overthewire.org -p 2220
+VwOSWtCA7lRKkTfbr2IDh6awj9RNZM5e
+```
+
+</details>
+
+<details open>
+<summary>Level 17 -> Level 18</summary>
+
+```
+diff passwords.old passwords.new | grep "^>"
+
+ssh bandit18@bandit.labs.overthewire.org -p 2220
+hga5tuuCLF6fFzUpnagiMN8ssu9LFrdg
+```
+
+</details>
+
+<details open>
+<summary>Level 18 -> Level 19</summary>
+
+```
+ssh bandit18@bandit.labs.overthewire.org -p 2220 "cat ./readme"
+
+ssh bandit19@bandit.labs.overthewire.org -p 2220
+awhqfNnAbc1naukrpqDYcF95h7HoMTrC
+```
+
+</details>
+
+<details open>
+<summary>Level 19 -> Level 20</summary>
+
+```
+ls
+
+./bandit20-do
+
+./bandit20-do cat /etc/bandit_pass/bandit20
+
+ssh bandit20@bandit.labs.overthewire.org -p 2220
+VxCazJaVykI6W36BkBU0mJTCM8rR95XT
+```
+
+</details>
+
+<details open>
+<summary>Level 20 -> Level 21</summary>
+
+```
+
+```
 
 </details>
